@@ -97,7 +97,24 @@
         padding: 3%;
     }
 
+    .curriculo__conteudo__info {
+        padding-bottom: 5%;
+    }
+
+    .curriculo__conteudo__ancoras {
+        align-items: center;
+    }
+
     .curriculo__conteudo__links {
        padding: 6%;
+       gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .curriculo__conteudo__ancoras {
+        align-items: center;
+        gap: 40px;
     }
 }
