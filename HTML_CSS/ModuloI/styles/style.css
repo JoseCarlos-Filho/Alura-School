@@ -5,7 +5,7 @@
     --cor-secundaria: #F6F6F6;
     --cor-terciaria: #22D4FD;
     --cor-destaque: #ef97ef;
-    --cor-destaque-p: #0a0a62;
+    --cor-destaque-p: #e1f007;
 
     --cor-botoes-background: #2f2f32;
     --cor-font-botoes: #ffffff;
@@ -29,6 +29,7 @@
 body {
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,118,121,1) 44%, rgba(0,212,255,1) 100%);
     color: var(--cor-secundaria);
+    width: 100%;
 }
 
 .cabecalho {
@@ -75,7 +76,7 @@ body {
 }
 
 .title-destaque {
-    color: var(--cor-destaque);
+    color: var(--cor-destaque-p);
 }
 
 .paragrafo-detaque {
@@ -165,4 +166,11 @@ body {
     .center__about {
         text-align: center;
     }
+}
+
+@media (max-width: 480px) {
+    .cabecalho__menu {
+        gap: 20px;
+    }
+
 }
