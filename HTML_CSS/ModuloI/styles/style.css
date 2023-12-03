@@ -161,4 +161,8 @@ body {
     .apresentacao__conteudo {
         width: auto;
     }
+
+    .center__about {
+        text-align: center;
+    }
 }
