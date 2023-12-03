@@ -58,7 +58,6 @@
     align-items: center;
     justify-content: space-around;
 
-    /* width: 280px; */
     background-color: #2f2f32;
     text-align: center;
     color: #fff;
@@ -79,4 +78,26 @@
     color: #060606;
     border: 2px solid #6490ca;
     transform: scale(1.1);
+}
+
+@media (max-width: 900px) {
+    .curriculo {
+        flex-direction: column-reverse;
+        margin: 0;
+    }
+
+    .curriculo__conteudo {
+        width: auto;
+        padding: 5%;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .curriculo__conteudo__subtitulo {
+        padding: 3%;
+    }
+
+    .curriculo__conteudo__links {
+       padding: 6%;
+    }
 }
