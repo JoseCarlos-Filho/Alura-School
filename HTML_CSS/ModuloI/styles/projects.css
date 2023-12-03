@@ -126,4 +126,8 @@
         gap: 16px;
         align-items: center;
     }
+
+    .projetos__lista__techs {
+        flex-wrap: wrap;
+    }
 }
