@@ -90,3 +90,21 @@
     display: flex;
     justify-content: center;
 }
+
+@media (max-width: 900px) {
+    .projetos__lista {
+        flex-direction: column-reverse;
+    }
+
+    .projetos__lista__content {
+        width: auto;
+    }
+
+    .projetos__lista__titulo {
+        text-align: center;
+    }
+
+    .projetos__lista__info {
+        text-align: center;
+    }
+}
