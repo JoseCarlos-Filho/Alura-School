@@ -1,0 +1,82 @@
+.curriculo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5% 0%;
+}
+
+
+
+.curriculo__conteudo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 0% 5%;
+    gap: 16px;
+}
+
+.curriculo__conteudo__titulo {
+    font-family: 'Krona One', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.curriculo__conteudo__subtitulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.curriculo__conteudo__info {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.curriculo__conteudo__lista {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 2rem;
+
+    list-style-image: url('../img/check\ \(1\).png');
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.curriculo__conteudo__ancoras {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.curriculo__conteudo__links {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    /* width: 280px; */
+    background-color: #2f2f32;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #22D4FD;
+    border-radius: 8px;
+
+    font-size: 18px;
+    padding: 21.5px 0px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+
+    transition: transform .2s;
+}
+
+.curriculo__conteudo__links:hover {
+    background-color: #5f6266;
+    color: #060606;
+    border: 2px solid #6490ca;
+    transform: scale(1.1);
+}
