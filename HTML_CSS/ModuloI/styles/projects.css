@@ -18,14 +18,14 @@
 .projetos__lista {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin: 5rem;
+    justify-content: space-evenly;
+    margin: 5% 3%;
 
 }
 
 .projetos__lista__image {
-    height: 300px;
-    width: 500px;
+    /* height: 110%; */
+    width: 40%;
     margin: 2rem;
     border: 2px solid var(--cor-border-image);
     box-shadow: 10px 10px 15px var(--cor-shadow);
@@ -33,7 +33,7 @@
 }
 
 .projetos__lista__content {
-    width: 55%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -106,5 +106,24 @@
 
     .projetos__lista__info {
         text-align: center;
+    }
+
+    .projetos__lista__image {
+        
+        width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+
+
+    .projetos__lista__content {
+        width: 75%;
+    }
+
+    .projetos__lista__links {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
     }
 }
