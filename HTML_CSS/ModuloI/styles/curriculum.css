@@ -1,8 +1,8 @@
 .curriculo {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 5% 0%;
+    justify-content: space-evenly;
+    margin: 5% 3%;
 }
 
 
