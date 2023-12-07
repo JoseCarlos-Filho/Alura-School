@@ -3,7 +3,8 @@
 :root {
     --cor-primaria: #000000;
     --cor-secundaria: #F6F6F6;
-    --cor-terciaria: #22D4FD;
+    --cor-terciaria: #ecfcfc;
+    /* --cor-terciaria: #22D4FD; */
     --cor-destaque: #ef97ef;
     --cor-destaque-p: #e1f007;
 
@@ -28,12 +29,46 @@
 
 body {
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,118,121,1) 44%, rgba(0,212,255,1) 100%);
+    /* background: linear-gradient(90deg, rgba(7,7,7,1) 0%, rgba(128,128,128,1) 50%, rgba(185,190,190,1) 100%); */
     color: var(--cor-secundaria);
     width: 100%;
 }
 
 .cabecalho {
     padding: 2% 0% 0% 10%;
+}
+
+.cabecalho__nav__bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0rem;
+}
+
+.cabecalho__nav__list ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 80px;
+}
+
+.cabecalho__nav__link {
+    font-family: var(--font-secundaria);
+    font-size: 1.25rem;
+    font-weight: 600;
+    /* background: -webkit-linear-gradient(#f1f1f3, rgb(95, 94, 94));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    /* color: linear-gradient(90deg, rgb(248, 251, 252) 50%, rgb(99, 103, 103) 44%, rgba(2,0,36,1) 0%); */
+    color: var(--cor-terciaria);
+    text-decoration: none;
+}
+
+.cabecalho__mobile__menu {
+    display: none;
+}
+
+.cabecalho__mobile {
+    display: none;
 }
 
 .cabecalho__menu {
@@ -165,6 +200,44 @@ body {
 
     .center__about {
         text-align: center;
+    }
+}
+
+@media (max-width: 730px) {
+    .cabecalho__nav__bar {
+        padding: 1.5rem 4rem;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .cabecalho__nav__item {
+        display: none;
+    }
+
+    .cabecalho__mobile__menu {
+        display: block;
+    }
+
+    .cabecalho__mobile__menu button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .cabecalho__mobile ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    .cabecalho__mobile .cabecalho__nav__item {
+        display: block;
+        padding-top: 1.2rem;
+    }
+
+    .abrir {
+        display: block;
     }
 }
 
