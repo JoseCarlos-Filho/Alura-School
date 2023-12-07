@@ -9,12 +9,35 @@
 </head>
 <body>
     <header class="cabecalho">
-        <nav class="cabecalho__menu">
+        <nav class="cabecalho__nav__bar">
+            <div class="cabecalho__nav__list">
+                <ul>
+                    <li class="cabecalho__nav__item"><a class="cabecalho__nav__link" href="index.html">Home</a></li>
+                    <li class="cabecalho__nav__item"><a class="cabecalho__nav__link" href="about.html">Sobre mim</a></li>
+                    <li class="cabecalho__nav__item"> <a class="cabecalho__nav__link" href="curriculum.html">Currículo</a></li>
+                    <li class="cabecalho__nav__item"><a class="cabecalho__nav__link" href="projects.html">Projetos</a></li>
+                </ul>
+            </div>
+
+            <div class="cabecalho__mobile__menu">
+                <button onclick="menuShow()"><img class="icon" src="./img/icons8-menu.svg" alt=""></button>
+            </div>
+        </nav>
+
+        <div class="cabecalho__mobile">
+            <ul>
+                <li class="cabecalho__nav__item"><a class="cabecalho__nav__link" href="index.html">Home</a></li>
+                <li class="cabecalho__nav__item"><a class="cabecalho__nav__link" href="about.html">Sobre mim</a></li>
+                <li class="cabecalho__nav__item"> <a class="cabecalho__nav__link" href="curriculum.html">Currículo</a></li>
+                <li class="cabecalho__nav__item"><a class="cabecalho__nav__link" href="projects.html">Projetos</a></li>
+            </ul>
+        </div>
+        <!-- <nav class="cabecalho__menu">
             <a class="cabecalho__menu__link" href="index.html">Home</a>
             <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
             <a class="cabecalho__menu__link" href="curriculum.html">Currículo</a>
             <a class="cabecalho__menu__link" href="projects.html">Projetos</a>
-        </nav>
+        </nav> -->
     </header>
     <main class="projetos">
         <h1 class="projetos__titulo">Explore os projetos e conheça minhas habilidades e capacidade no mundo DEV.</h1>
@@ -140,5 +163,6 @@
     <footer>
         <p class="rodape">Desenvolvido por &copy; José Carlos</p>
     </footer>
+    <script src="./js/actions.js"></script>
 </body>
 </html>
