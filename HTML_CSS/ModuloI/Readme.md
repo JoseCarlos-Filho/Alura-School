@@ -1,2 +1,3 @@
-#Portifólio José Carlos Rodrigues Filho
-[imagem desktop]: img/desktop-portifolio.png
+# Portifólio José Carlos Rodrigues Filho
+
+<img title="Desktop" alt="versão desktop da aplicação" src="img/desktop-portifolio.png">
