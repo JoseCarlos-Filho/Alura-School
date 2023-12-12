@@ -138,4 +138,4 @@ div.classList.add("myClass");
 
 ### Status
 
-- Concluido: [![Vercel Status](https://api.netlify.com/api/v1/badges/5433c841-e738-419e-912f-d93faeac3678/deploy-status)](https://josecarlos-portifolio.vercel.app/)
+- Concluido: [![Vercel Deploy](https://therealsujitk-vercel-badge.vercel.app/?app=josecarlos-portifolio)](https://josecarlos-portifolio.vercel.app/)
