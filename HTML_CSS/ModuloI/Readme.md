@@ -49,16 +49,16 @@ Aplicar a linguagem de marcação de texto HTML5 e utilizar o cascating sheet st
   - O **BEM** é uma metodologia CSS que significa Bloco, Elemento e Modificador. É uma convenção de nomenclatura que ajuda os desenvolvedores a criar código CSS reutilizável e fácil de manter. A metodologia BEM é baseada na ideia de dividir a interface do usuário em blocos independentes, que podem ser reutilizados em todo o site. Cada bloco consiste em um ou mais elementos, que são as partes do bloco que executam uma função específica. Os modificadores são usados para modificar a aparência ou o comportamento dos blocos e elementos.
   Referência: [CSS-TRICKS](https://css-tricks.com/bem-101/)
 
-  O BEM é amplamente utilizado na comunidade de desenvolvimento web e tem muitas vantagens, incluindo melhor manutenção de código, melhor escalabilidade e colaboração mais fácil entre desenvolvedores. Também é compatível com outras tecnologias front-end, como Sass.
+  - O BEM é amplamente utilizado na comunidade de desenvolvimento web e tem muitas vantagens, incluindo melhor manutenção de código, melhor escalabilidade e colaboração mais fácil entre desenvolvedores. Também é compatível com outras tecnologias front-end, como Sass.
   Referência: [GETBEM](https://getbem.com/)
 
 ### CSS
 
 - Variáveis: Variáveis CSS são entidades definidas por desenvolvedores, contendo valores específicos para serem reutilizados ao longo do documento. São configuradas usando esta notação (ex: --cor-principal: black; ) e são acessadas usando a funcão var() (ex: color: var(--cor-principal); )
 
-Websites complexos tem uma quantidade muito grande de CSS, com uma quantidade de repetição de valores muito frequente. Por exemplo, a mesma cor pode ser usada em centenas de lugares diferentes, requerindo uma pesquisa global e substituição caso esta cor necessite ser trocada. Variáveis CSS permite um valor ser guardado em um lugar, então ser referenciado em muitos outros lugares. Um benefício adicional é a semântica dos identificadores. Por exemplo --cor-principal-texto é mais facil de ser entendido do que #00ff00, especialmente se esta cor também é usada em outro contexto.
+- Websites complexos tem uma quantidade muito grande de CSS, com uma quantidade de repetição de valores muito frequente. Por exemplo, a mesma cor pode ser usada em centenas de lugares diferentes, requerindo uma pesquisa global e substituição caso esta cor necessite ser trocada. Variáveis CSS permite um valor ser guardado em um lugar, então ser referenciado em muitos outros lugares. Um benefício adicional é a semântica dos identificadores. Por exemplo --cor-principal-texto é mais facil de ser entendido do que #00ff00, especialmente se esta cor também é usada em outro contexto.
 
-Variáveis CSS estão sujeitas ao efeito cascata do css e herdam seus valores de seus pais. [fonte](https://developer.mozilla.org/pt-BR/docs/Web/CSS/Using_CSS_custom_properties#valores_de_fallback_da_propriedade_customizada)
+- Variáveis CSS estão sujeitas ao efeito cascata do css e herdam seus valores de seus pais. [fonte](https://developer.mozilla.org/pt-BR/docs/Web/CSS/Using_CSS_custom_properties#valores_de_fallback_da_propriedade_customizada)
 
 
 #### JS
@@ -84,10 +84,13 @@ if (div.classList.contains("myClass")) {
 </body>
 </html>
 ```
-  Referência: [stackoverflow](https://stackoverflow.com/questions/27566132/how-exactly-does-element-classlist-contains-work-in-javascript).
+
+- Referência: [stackoverflow](https://stackoverflow.com/questions/27566132/how-exactly-does-element-classlist-contains-work-in-javascript).
+
 
 - **classList.remove()** é um método JavaScript que remove uma classe específica da lista de classes de um elemento. Retorna undefined.
-  Referência: [stackoverflow](https://stackoverflow.com/questions/15040297/clear-element-classlist)
+  
+
 ##### Exemplo
 ```
 <!DOCTYPE html>
@@ -105,8 +108,11 @@ div.classList.remove("myClass");
 </html>
 ```
 
+- Referência: [stackoverflow](https://stackoverflow.com/questions/15040297/clear-element-classlist)
+
+
 - **classList.add()** é um método JavaScript que adiciona uma ou mais classes à lista de classes de um elemento. Retorna undefined.
-  Referência: [stackoverflow](https://stackoverflow.com/questions/15040297/clear-element-classlist)
+  
 ##### Exemplo
 ```
 <!DOCTYPE html>
@@ -124,10 +130,12 @@ div.classList.add("myClass");
 </html>
 ```
 
+- Referência: [stackoverflow](https://stackoverflow.com/questions/15040297/clear-element-classlist)
+
 
 - Element.classList : é uma propriedade somente leitura que retorna uma coleção DOMTokenList (en-US) ativa dos atributos de classe do elemento. Referência: [MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Element/classList)
 
 
 ### Status
 
-- Concluido: [![Netlify Status](https://api.netlify.com/api/v1/badges/5433c841-e738-419e-912f-d93faeac3678/deploy-status)](https://josecarlos-portifolio.vercel.app/)
+- Concluido: [![Vercel Status](https://api.netlify.com/api/v1/badges/5433c841-e738-419e-912f-d93faeac3678/deploy-status)](https://josecarlos-portifolio.vercel.app/)
