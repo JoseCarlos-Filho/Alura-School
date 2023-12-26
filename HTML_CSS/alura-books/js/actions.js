@@ -7,4 +7,4 @@ const swiper = new Swiper('.swiper', {
     }
 });
 
-swiper();
+// swiper();
