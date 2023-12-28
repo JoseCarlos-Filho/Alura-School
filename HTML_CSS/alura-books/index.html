@@ -70,12 +70,20 @@
         </ul>
 
         <div class="container">
-            <a href="#"><img class="container__imagem" src="assets/imagens/Favoritos.svg" alt="Meus favoritos"></a>
-            <a href="#"><img class="container__imagem" src="assets/imagens/Compras.svg" alt="Carrinhos de compras"></a>
-            <a href="#"><img class="container__imagem" src="assets/imagens/Usuario.svg" alt="Meu perfil"></a>
+            <a href="#">
+                <img class="container__imagem container__imagem--transparente" src="assets/imagens/Favoritos.svg" alt="Meus favoritos">
+            </a>
+            <a href="#" class="container__link">
+                <img class="container__imagem" src="assets/imagens/Compras.svg" alt="Carrinhos de compras">
+                <p class="container__texto">Minha sacola</p>
+            </a>
+            <a href="#" class="container__link">
+                <img class="container__imagem" src="assets/imagens/Usuario.svg" alt="Meu perfil">
+                <p class="container__texto">Meu perfil</p>
+            </a>
         </div>
     </header>
-
+    <!-- seção banner -->
     <section class="banner">
         <h2 class="banner__titulo">Já sabe por onde começar?</h2>
         <p class="banner__texto">Encontre em nossa estante o que precisa para seu desenvolvimento!</p>
@@ -91,22 +99,31 @@
             <div class="swiper-pagination"></div>
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide"><img src="assets/imagens/ApacheKafka.svg" alt="Livro sobre apache kafka e spring boot da alura books"></div>
-                <div class="swiper-slide"><img src="assets/imagens/Lideranc╠ºa.svg" alt="Livro sobre liderança em design da alura books"></div>
-                <div class="swiper-slide"><img src="assets/imagens/Javascript.svg" alt="Livro sobre Javascript assertivo do alura books"></div>
-                <div class="swiper-slide"><img src="assets/imagens/Guia Front-end.svg" alt="Livro sobre front-end do alura books"></div>
-                <div class="swiper-slide"><img src="assets/imagens/Acessibilidade.svg" alt="Livro sobre Acessibilidade do alura books"></div>
-                <div class="swiper-slide"><img src="assets/imagens/MetricasAgeis.svg" alt="Livro sobre metricas ageis do alura books"></div>
-                <div class="swiper-slide"><img src="assets/imagens/ReactNative.svg" alt="Livro sobre ReactNative do alura books"></div>
-                <div class="swiper-slide"><img src="assets/imagens/Nodejs.svg" alt="Livro sobre Nodejs do alura books"></div>
+                <div class="swiper-slide"><img src="assets/imagens/ApacheKafka.svg"
+                        alt="Livro sobre apache kafka e spring boot da alura books"></div>
+                <div class="swiper-slide"><img src="assets/imagens/Lideranc╠ºa.svg"
+                        alt="Livro sobre liderança em design da alura books"></div>
+                <div class="swiper-slide"><img src="assets/imagens/Javascript.svg"
+                        alt="Livro sobre Javascript assertivo do alura books"></div>
+                <div class="swiper-slide"><img src="assets/imagens/Guia Front-end.svg"
+                        alt="Livro sobre front-end do alura books"></div>
+                <div class="swiper-slide"><img src="assets/imagens/Acessibilidade.svg"
+                        alt="Livro sobre Acessibilidade do alura books"></div>
+                <div class="swiper-slide"><img src="assets/imagens/MetricasAgeis.svg"
+                        alt="Livro sobre metricas ageis do alura books"></div>
+                <div class="swiper-slide"><img src="assets/imagens/ReactNative.svg"
+                        alt="Livro sobre ReactNative do alura books"></div>
+                <div class="swiper-slide"><img src="assets/imagens/Nodejs.svg" alt="Livro sobre Nodejs do alura books">
+                </div>
                 ...
             </div>
 
             <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+
 
         </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
 
         <div class="card">
             <!-- 1° linha (aplicando flexbox) -->
@@ -125,7 +142,8 @@
                 <!-- 1° coluna (aplicando flexbox) -->
                 <ul class="botoes">
                     <li class="botoes__item"><img src="assets/imagens/Favoritos.svg" alt="Favoritar livro"></li>
-                    <li class="botoes__item"><img src="assets/imagens/Compras.svg" alt="Adicionar no carrinho de compras"></li>
+                    <li class="botoes__item"><img src="assets/imagens/Compras.svg"
+                            alt="Adicionar no carrinho de compras"></li>
                 </ul>
                 <!-- 2° coluna (aplicando flexbox) -->
                 <a href="#" class="botoes__ancora">Saiba mais</a>
@@ -142,42 +160,52 @@
             <div class="swiper-pagination"></div>
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide"><img src="assets/imagens/Acessibilidade.svg" alt="Livro sobre Acessibilidade do alura books"></div>
-                <div class="swiper-slide"><img src="assets/imagens/ApacheKafka.svg" alt="Livro sobre apache kafka e spring boot da alura books"></div>
-                <div class="swiper-slide"><img src="assets/imagens/Lideranc╠ºa.svg" alt="Livro sobre liderança em design da alura books"></div>
-                <div class="swiper-slide"><img src="assets/imagens/Guia Front-end.svg" alt="Livro sobre front-end do alura books"></div>
-                <div class="swiper-slide"><img src="assets/imagens/Javascript.svg" alt="Livro sobre Javascript assertivo do alura books"></div>
-                <div class="swiper-slide"><img src="assets/imagens/MetricasAgeis.svg" alt="Livro sobre metricas ageis do alura books"></div>
-                <div class="swiper-slide"><img src="assets/imagens/ReactNative.svg" alt="Livro sobre ReactNative do alura books"></div>
-                <div class="swiper-slide"><img src="assets/imagens/Nodejs.svg" alt="Livro sobre Nodejs do alura books"></div>
+                <div class="swiper-slide"><img src="assets/imagens/Acessibilidade.svg"
+                        alt="Livro sobre Acessibilidade do alura books"></div>
+                <div class="swiper-slide"><img src="assets/imagens/ApacheKafka.svg"
+                        alt="Livro sobre apache kafka e spring boot da alura books"></div>
+                <div class="swiper-slide"><img src="assets/imagens/Lideranc╠ºa.svg"
+                        alt="Livro sobre liderança em design da alura books"></div>
+                <div class="swiper-slide"><img src="assets/imagens/Guia Front-end.svg"
+                        alt="Livro sobre front-end do alura books"></div>
+                <div class="swiper-slide"><img src="assets/imagens/Javascript.svg"
+                        alt="Livro sobre Javascript assertivo do alura books"></div>
+                <div class="swiper-slide"><img src="assets/imagens/MetricasAgeis.svg"
+                        alt="Livro sobre metricas ageis do alura books"></div>
+                <div class="swiper-slide"><img src="assets/imagens/ReactNative.svg"
+                        alt="Livro sobre ReactNative do alura books"></div>
+                <div class="swiper-slide"><img src="assets/imagens/Nodejs.svg" alt="Livro sobre Nodejs do alura books">
+                </div>
                 ...
             </div>
 
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
         </div>
-
+        <!-- If we need navigation buttons -->
+        <div class="swiper-maisvendido-prev"></div>
+        <div class="swiper-maisvendido-next"></div>
         <div class="card">
             <!-- 1° linha (aplicando flexbox) -->
             <div class="card__descricao">
                 <!-- 1° coluna (aplicando flexbox) -->
                 <div class="descricao maisvendido">
-                    <img src="assets/imagens/Estrelinhas.svg" alt="classificação do autor no alura books" class="descricao__estrelas">
+                    <img src="assets/imagens/Estrelinhas.svg" alt="classificação do autor no alura books"
+                        class="descricao__estrelas">
                     <h3 class="descricao__titulo maisvendido-titulo">Autora do Mês</h3>
                     <h2 class="descricao__titulo-livro">Juliana Agarikov</h2>
-                    <p class="descricao__texto">Analista de sistemas e escritora, Juliana é especialista em Front-End.</p>
+                    <p class="descricao__texto">Analista de sistemas e escritora, Juliana é especialista em Front-End.
+                    </p>
                 </div>
                 <!-- 2° coluna (aplicando flexbox) -->
-                <img class="descricao__imagem" src="assets/imagens/Perfil-escritora 1.png" alt="Perfil da autora loja alura books">
+                <img class="descricao__imagem" src="assets/imagens/Perfil-escritora 1.png"
+                    alt="Perfil da autora loja alura books">
             </div>
             <!-- 2° linha (aplicando flexbox) -->
             <div class="card__botoes">
                 <!-- 1° coluna (aplicando flexbox) -->
                 <ul class="botoes">
                     <li class="botoes__item"><img src="assets/imagens/Favoritos.svg" alt="Favoritar livro"></li>
-                    <li class="botoes__item"><img src="assets/imagens/Compras.svg" alt="Adicionar no carrinho de compras"></li>
+                    <li class="botoes__item"><img src="assets/imagens/Compras.svg"
+                            alt="Adicionar no carrinho de compras"></li>
                 </ul>
                 <!-- 2° coluna (aplicando flexbox) -->
                 <a href="#" class="botoes__ancora">Saiba mais</a>
@@ -216,13 +244,15 @@
     </section>
 
     <section class="contato">
-        <h2 class="contato__titulo">Fique por dentro das novidades!</h2>
-        <p class="contato__texto">Atualizações de e-books, novos livros, promoções e outros.</p>
+        <div class="contato__descricao">
+            <h2 class="contato__titulo">Fique por dentro das novidades!</h2>
+            <p class="contato__texto">Atualizações de e-books, novos livros, promoções e outros.</p>
+        </div>
         <input class="contato__email" type="email" name="" id="" placeholder="Cadastre seu e-mail">
     </section>
 
     <hr />
-    
+
     <footer class="rodape">
         <!-- 1° Coluna Grupo Alura -->
         <h2 class="rodape__titulo">Grupo Alura</h2>
