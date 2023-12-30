@@ -80,3 +80,120 @@
 .maisvendido-titulo {
     margin: 0.5em 0em;
 }
+
+@media screen and (min-width: 1024px) {
+    .carrossel__titulo {
+        font-size: 26px;
+    }
+
+    .swiper-pagination {
+        margin: 2em 0 3em 0;
+    }
+
+    .swiper {
+        width: 60%;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next,
+    .swiper-maisvendido-prev,
+    .swiper-maisvendido-next {
+        display: block;
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        background-size: 100% auto;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        margin: 23% 16%;
+    }
+
+    .swiper-button-next {
+        right: 0em;
+        background-image: url(../assets/imagens/FAB-left.svg);
+    }
+
+    .swiper-button-prev {
+        left: 0em;
+        background-image: url(../assets/imagens/FAB-right.svg);
+    }
+
+    .swiper-button-next::after {
+        display: none;
+    }
+
+    .swiper-button-prev::after {
+        display: none;
+    }
+
+    .swiper-maisvendido-prev,
+    .swiper-maisvendido-next {
+        margin: -15% 16%;
+        z-index: 10 !important;
+    }
+
+    .swiper-maisvendido-next {
+        right: 0em;
+        background-image: url(../assets/imagens/FAB-left.svg);
+    }
+
+    .swiper-maisvendido-prev {
+        left: 0em;
+        background-image: url(../assets/imagens/FAB-right.svg);
+    }
+
+    .card {
+        width: 40%;
+        margin: 2em auto;
+    }
+}
+
+@media screen and (min-width: 1728px) {
+
+    .carrossel__container {
+        display: flex;
+        align-items: center;
+        margin: 0 20vw 3em 20vw;
+    }
+
+    .swiper-pagination {
+        margin: 1em 0em;
+    }
+
+    .swiper {
+        width: 50%;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        margin: -2% 17%;
+        right: 37%;
+    }
+
+    .swiper-maisvendido-prev,
+    .swiper-maisvendido-next {
+        margin: 3% 17% 0% 17%;
+        right: 37%;
+        z-index: 10 !important;
+    }
+
+    .descricao__titulo {
+        font-size: 32px;
+    }
+
+    .descricao__texto {
+        font-size: 16px;
+    }
+
+    .descricao {
+        margin-right: 2em;
+    }
+
+    .card {
+        width: 65%;
+        margin-left: 6em;
+    }
+
+}
