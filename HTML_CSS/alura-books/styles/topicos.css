@@ -42,6 +42,11 @@
     .topicos__lista {
         gap: 24px;
     }
+
+    .topicos__link:hover {
+        color: var(--laranja);
+        background-color: var(--branco);
+    }
 }
 
 @media screen and (min-width: 1728px) {
