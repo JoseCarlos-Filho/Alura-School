@@ -35,6 +35,10 @@ hr {
         color: var(--cinza-link-rodape);
     }
 
+    .lista-rodape__link:hover {
+        color: var(--laranja);
+    }
+
     .rodape__titulo {
         font-size: 24px;
     }
