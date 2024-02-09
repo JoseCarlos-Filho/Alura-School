@@ -104,3 +104,56 @@ log(`${carteiraHabilitacao || temMultas ? `Pode dirigir` : `Não pode dirigir`}`
 const idadeMinima = 18;
 const idadeCliente = 17;
 log(`${idadeCliente >= idadeMinima ? `Pode adquirir o ingresso` : `Cliente com idade insuficiente!`}`);
+
+// Exercícios de Funções
+// Exercicio 1
+function saudacao(nome) {
+    return log(`Olá ${nome}, seja bem vindo ao mundo JS!`);
+}
+
+saudacao('José');
+
+
+// Exercício 2
+const maiorIdade = (idade) => {
+    if (idade >= 18) {
+        return log('pessoa é de maior!');
+    } else {
+        return log('pessoa é de menor!');
+    }
+}
+
+maiorIdade(18);
+
+// Exercício 3
+const palindromo = (palavra) => {
+    const palavraInvertida = palavra.split('').reverse().join('');
+    if(palavra.toLowerCase() === palavraInvertida.toLowerCase()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+log(palindromo('ovo'));
+
+// Exercício 4
+const maiorValor = (valor1, valor2, valor3) => {
+    if(valor1 > valor2 && valor1 > valor3) {
+        return log(`este é o maior valor ${valor1}`);
+    } else if (valor2 > valor1 && valor2 > valor3) {
+        return log(`este é o maior valor ${valor2}`);
+    } else {
+        return log(`este é o maior valor ${valor3}`);
+    }
+}
+
+maiorValor(25, 10, 2);
+
+// Exercicio 5
+const calculaPotencia = (base, expoente) => {
+    let resultado = Math.pow(base, expoente);
+    return log(`O calcula da potencia de base ${base} com expoente ${expoente} é : ${resultado}`);
+}
+
+calculaPotencia(4, 2);
