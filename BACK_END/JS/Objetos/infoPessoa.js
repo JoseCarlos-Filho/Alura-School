@@ -93,3 +93,81 @@ filtroCidadeLins.forEach((campo) => {
    Cidade: ${campo.cidade}`);
    log();
 })
+
+// exercicio 4
+log();
+log('Exercício 4');
+log();
+
+const calculadora = {
+    soma: function(valor1, valor2) {
+        return valor1 + valor2;
+    },
+
+    subtracao: function(valor1, valor2) {
+        return valor1 - valor2;
+    },
+
+    multiplicacao: function(valor1, valor2) {
+        return valor1 * valor2;
+    },
+
+    divisao: function(valor1, valor2) {
+        if(valor2 !== 0) {
+           return valor1 / valor2; 
+        } else {
+            return log('Divisão por zero não permitido.');
+        }
+    },
+
+    calcularMedia: function(arr) {
+        let soma = 0;
+        arr.forEach((valor) => soma += valor);
+
+        const media = soma / arr.length;
+        return media;
+    }
+};
+
+log(`Divisão: ${calculadora.divisao(10, 5)}`);
+const arrayNumeros = [2, 5, 10, 8, 4];
+log(`A media é: ${calculadora.calcularMedia(arrayNumeros)}`);
+
+// exercicio 5
+log();
+log('Exercício 5');
+log();
+
+const contaBancaria = {
+    titular: 'José',
+    saldo: 5000,
+    depositar: function(valor) {
+        this.saldo += valor;
+    },
+    sacar: function(valor) {
+        if (valor <= this.saldo) {
+            return this.saldo -= valor;
+        } else {
+            return log('Saldo insuficiente');
+        }
+    },
+};
+
+const cliente = {
+    nome: 'José',
+    conta: contaBancaria,
+};
+
+function mostrarSaldo(cliente) {
+    log(`Cliente: ${cliente.nome}, possui saldo: ${cliente.conta.saldo}`);
+}
+
+mostrarSaldo(cliente);
+let deposito = 1200;
+let saque = 800;
+log(`Valor do depósito: ${deposito}`);
+cliente.conta.depositar(deposito);
+log(`Saldo atualizado: ${cliente.conta.saldo}`);
+log(`Valor do saque: ${saque}`);
+cliente.conta.sacar(saque);
+log(`Saldo após o saque: ${cliente.conta.saldo}`);
