@@ -17,6 +17,19 @@ listaTeclas.forEach((tecla) => {
     const somInstrumento = tecla.classList[1];
     const idAudio = `#som_${somInstrumento}`;
     tecla.addEventListener('click', () => {document.querySelector(idAudio).play()});
+    // tecla.onkeydown = function () {
+    //     tecla.classList.add('ativa');
+    // }
+    tecla.addEventListener("keydown", (evento) => {
+        if (evento.code === "Enter" || evento.code === "Space") {
+            tecla.classList.add('ativa');
+        }
+    });
+    tecla.addEventListener("keyup", (evento) => {
+        if (evento.code === "Enter" || evento.code === "Space") {
+            tecla.classList.remove('ativa');
+        }
+    });
 })
 
 // function tocaSom(teclas) {
@@ -58,5 +71,15 @@ for(let indice = 0; indice < tecladoNumerico.length; indice++) {
   tecla.addEventListener('click', () => {
     let displayNumeros = document.querySelector('input[type=tel]');
     displayNumeros.value += tecla.value;
-  })
+  });
+  tecla.addEventListener('keydown', (evento) => {
+    if(evento.code === 'Enter' || evento.code === 'space') {
+      tecla.classList.add('ativa')
+    }
+  });
+  tecla.addEventListener('keyup', (evento) => {
+    if(evento.code === 'Enter' || evento.code === 'space') {
+      tecla.classList.remove('ativa');
+    }
+  });
 }
