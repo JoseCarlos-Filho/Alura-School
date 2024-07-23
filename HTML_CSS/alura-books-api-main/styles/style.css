@@ -96,7 +96,7 @@ body {
   margin: 1rem 0;
 }
 
-.livro__preco {
+.livro__preco, .livro__cart {
   text-align: center;
   font-size: 24px;
   font-weight: 700;
