@@ -1,16 +1,43 @@
+/*
+------------------ Declaração de variaveis -----------------------
+*/
+
 const html = document.querySelector('html');
 // const btnActions = document.querySelectorAll('.app__card-button');
 const btnFoco =  document.querySelector('.app__card-button--foco');
 const btnCurto = document.querySelector('.app__card-button--curto');
 const btnLongo = document.querySelector('.app__card-button--longo');
+const displayTimer = document.getElementById('timer');
+const displayTitle = document.querySelector('.app__title');
+const displayImagem = document.querySelector('.app__image');
+const btnStartPause = document.getElementById('start-pause');
+const banner = document.querySelector('.app__image');
+
+const tempFoco = 1500;
+const tempCurto = 300;
+const tempLongo = 900;
+
+
+/*
+------------------ Ações dos botões Foco, descanso-curto, descanso-longo  -----------------------
+*/
 
 btnFoco.addEventListener("click", () => {
-    html.setAttribute('data-contexto', 'foco');
+    alterarContexto('foco');
 });
 
 btnCurto.addEventListener("click", () => {
-    html.setAttribute('data-contexto', 'descanso-curto')
+    alterarContexto('descanso-curto');
 })
+
+btnLongo.addEventListener("click", () => {
+    alterarContexto('descanso-longo');
+})
+
+function alterarContexto(contexto) {
+    html.setAttribute("data-contexto", contexto);
+    banner.setAttribute("src", `/imagens/${contexto}.png`);
+}
 
 
 
