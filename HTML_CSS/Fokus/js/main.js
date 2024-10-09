@@ -86,6 +86,7 @@ function alterarContexto(contexto) {
 
 const contagemRegressiva = () => {
     if(tempoDecorridoEmSegundos <= 0) {
+        zerar();
         alert('Tempo finalizado');
         return;
     }
@@ -93,10 +94,19 @@ const contagemRegressiva = () => {
     console.log("temporizador: " + tempoDecorridoEmSegundos);
 }
 
-btnStartPause.addEventListener("click", iniciar);
+btnStartPause.addEventListener("click", iniciarOuPausar);
 
-function iniciar() {
+function iniciarOuPausar() {
+    if(intervaloId) {
+        zerar()
+        return;
+    }
     intervaloId = setInterval(contagemRegressiva, 1000);
+}
+
+function zerar() {
+    clearInterval(intervaloId);
+    intervaloId = null;
 }
 
 
