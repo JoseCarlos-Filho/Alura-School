@@ -17,10 +17,24 @@ const botoes = document.querySelectorAll('.app__card-button');
 const musicaFocoInput = document.querySelector('#alternar-musica');
 const musica = new Audio('/sons/luna-rise-part-one.mp3');
 
+let tempoDecorridoEmSegundos = 5;
+let intervaloId = null;
+
 const tempFoco = 1500;
 const tempCurto = 300;
 const tempLongo = 900;
 
+/*
+------------------ Ações dos botão de Audio  ----------------------------------------------------
+*/
+musica.loop = true;
+musicaFocoInput.addEventListener("change", () => {
+    if (musica.paused) {
+        musica.play();
+    } else {
+        musica.pause();
+    }
+})
 
 /*
 ------------------ Ações dos botões Foco, descanso-curto, descanso-longo  -----------------------
@@ -66,9 +80,24 @@ function alterarContexto(contexto) {
 }
 
 
+/*
+------------------ Função para ontrolar o temporizador  -----------------------
+*/
 
+const contagemRegressiva = () => {
+    if(tempoDecorridoEmSegundos <= 0) {
+        alert('Tempo finalizado');
+        return;
+    }
+    tempoDecorridoEmSegundos -= 1;
+    console.log("temporizador: " + tempoDecorridoEmSegundos);
+}
 
+btnStartPause.addEventListener("click", iniciar);
 
+function iniciar() {
+    intervaloId = setInterval(contagemRegressiva, 1000);
+}
 
 
 
