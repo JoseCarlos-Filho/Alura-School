@@ -11,13 +11,19 @@ const displayTimer = document.getElementById('timer');
 const displayTitle = document.querySelector('.app__title');
 const displayImagem = document.querySelector('.app__image');
 const btnStartPause = document.getElementById('start-pause');
+const btnIniciarOuPausar = document.querySelector('#start-pause span');
+const imageBtnStartPause = document.querySelector(".app__card-primary-butto-icon");
+const timerNaTela = document.querySelector("#timer");
 const banner = document.querySelector('.app__image');
 const titulo = document.querySelector('.app__title');
 const botoes = document.querySelectorAll('.app__card-button');
 const musicaFocoInput = document.querySelector('#alternar-musica');
 const musica = new Audio('/sons/luna-rise-part-one.mp3');
+const musicaStart = new Audio('/sons/play.wav');
+const musicaPause = new Audio('/sons/pause.mp3');
+const musicaFinish = new Audio('/sons/beep.mp3');
 
-let tempoDecorridoEmSegundos = 5;
+let tempoDecorridoEmSegundos = 1500;
 let intervaloId = null;
 
 const tempFoco = 1500;
@@ -41,21 +47,25 @@ musicaFocoInput.addEventListener("change", () => {
 */
 
 btnFoco.addEventListener("click", () => {
+    tempoDecorridoEmSegundos = 1500;
     alterarContexto('foco');
     btnFoco.classList.add("active");
 });
 
 btnCurto.addEventListener("click", () => {
+    tempoDecorridoEmSegundos = 300;
     alterarContexto('descanso-curto');
     btnCurto.classList.add("active");
 })
 
 btnLongo.addEventListener("click", () => {
+    tempoDecorridoEmSegundos = 900;
     alterarContexto('descanso-longo');
     btnLongo.classList.add("active");
 })
 
 function alterarContexto(contexto) {
+    mostrarTempo();
     botoes.forEach(contexto => {
         contexto.classList.remove("active");
     })
@@ -86,30 +96,49 @@ function alterarContexto(contexto) {
 
 const contagemRegressiva = () => {
     if(tempoDecorridoEmSegundos <= 0) {
-        zerar();
+        musicaFinish.play();
         alert('Tempo finalizado');
+        zerar();
         return;
     }
     tempoDecorridoEmSegundos -= 1;
-    console.log("temporizador: " + tempoDecorridoEmSegundos);
+    // console.log("temporizador: " + tempoDecorridoEmSegundos);
+    mostrarTempo();
 }
 
 btnStartPause.addEventListener("click", iniciarOuPausar);
 
 function iniciarOuPausar() {
+    
     if(intervaloId) {
+        musicaPause.play();
         zerar()
         return;
     }
+    musicaStart.play();
     intervaloId = setInterval(contagemRegressiva, 1000);
+    imageBtnStartPause.src = "/imagens/pause.png";
+    btnIniciarOuPausar.textContent = "Pausar";
 }
 
 function zerar() {
     clearInterval(intervaloId);
+    imageBtnStartPause.src = "/imagens/play_arrow.png";
+    btnIniciarOuPausar.textContent = "Começar";
     intervaloId = null;
 }
 
+/*
+------------------ Mostrar tempo na tela  -----------------------
+*/
 
+function mostrarTempo() {
+    const tempo = new Date(tempoDecorridoEmSegundos * 1000);
+    const tempoFormatado = tempo.toLocaleTimeString('pt-br', {minute: '2-digit', second: '2-digit'});
+    timerNaTela.innerHTML = `${tempoFormatado}`;
+}
+
+mostrarTempo();
 
 
 
