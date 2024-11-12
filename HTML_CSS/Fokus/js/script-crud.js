@@ -3,9 +3,25 @@ const btnAdicionarTarefa = document.querySelector(".app__button--add-task");
 const formAdicionarTarefa = document.querySelector(".app__form-add-task");
 const textArea = document.querySelector(".app__form-textarea");
 const ulTarefas = document.querySelector(".app__section-task-list");
+const btnCancelaTarefa = document.querySelector(".app__form-footer__button--cancel");
+const paragrafoDescricaoTarefa = document.querySelector(".app__section-active-task-description");
 
 let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+let tarefaSelecionada = null;
 
+
+btnCancelaTarefa.addEventListener("click", () => {
+    textArea.value = "";
+    formAdicionarTarefa.classList.add('hidden');
+})    
+
+
+// função que adiciona nova tarefa ou atualiza.
+function atualizarTarefas() {
+    localStorage.setItem("tarefas", JSON.stringify(tarefas));
+}
+
+// função que cria os elementos(html) para adição da tarefa
 function criarElementoTarefa(tarefa) {
     const li = document.createElement("li");
     li.classList.add("app__section-task-list-item");
@@ -22,29 +38,54 @@ function criarElementoTarefa(tarefa) {
     paragrafo.textContent = tarefa.descricao;
     paragrafo.classList.add("app__section-task-list-item-description");
 
-    const botao = document.createElement("button");
-    botao.classList.add("app_button-edit");
-
-    botao.onclick = () => {
-        
+    const botaoEditar = document.createElement("button");
+    botaoEditar.classList.add("app_button-edit");
+    // botão que altera a descrição da tarefa já adicionados na lista.
+    botaoEditar.onclick = () => {
+        // debugger;
+        const novaDescricao = prompt("Qual é o nome da tarefa?");
+        if(novaDescricao) {
+            paragrafo.textContent = novaDescricao;
+            tarefa.descricao = novaDescricao;
+            atualizarTarefas();
+            alert("Tarefa atualizada!");
+        } else {
+            alert("Campo vazio ou cancelada, coloque uma descrição válida!");
+        }
     }
 
     
     const imagemBotao = document.createElement("img");
     imagemBotao.setAttribute("src", "/imagens/edit.png");
-    botao.append(imagemBotao);
+    botaoEditar.append(imagemBotao);
 
     li.append(svg);
     li.append(paragrafo);
-    li.append(botao);
+    li.append(botaoEditar);
+    // evento de click na lista de tarefas. Para selecionar uma tarefa.
+    li.onclick = () => {
+        document.querySelectorAll(".app__section-task-list-item-active").forEach(elemento => {
+            elemento.classList.remove("app__section-task-list-item-active");
+        })
+        if(tarefaSelecionada == tarefa) {
+            paragrafoDescricaoTarefa.textContent = "";
+            tarefaSelecionada = null;
+            return;
+        }
+        tarefaSelecionada = tarefa;
+        paragrafoDescricaoTarefa.textContent = tarefa.descricao;
+        li.classList.add("app__section-task-list-item-active");
+    }
 
     return li;
 }
 
+// evento de click do botão adicionar tarefa que ativa a visibilidade do form de tarefa
 btnAdicionarTarefa.addEventListener("click", () => {
     formAdicionarTarefa.classList.toggle("hidden");
 })
 
+// função que escuta um submit adicionando uma tarefa
 formAdicionarTarefa.addEventListener('submit', (evento) => {
     evento.preventDefault();
     const tarefa = {
@@ -53,11 +94,12 @@ formAdicionarTarefa.addEventListener('submit', (evento) => {
     tarefas.push(tarefa);
     const elementoTarefa = criarElementoTarefa(tarefa);
     ulTarefas.append(elementoTarefa);
-    localStorage.setItem("tarefas", JSON.stringify(tarefas));
+    atualizarTarefas();
     textArea.value = '';
     formAdicionarTarefa.classList.add('hidden')
 })
 
+// função que adiciona tarefa na ul com a chamada da função criaEmentoTarefa(tarefa)
 tarefas.forEach((tarefa) => {
     const elementoTarefa = criarElementoTarefa(tarefa);
     ulTarefas.append(elementoTarefa);
