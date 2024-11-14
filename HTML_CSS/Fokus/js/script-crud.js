@@ -7,6 +7,8 @@ const btnCancelaTarefa = document.querySelector(".app__form-footer__button--canc
 const paragrafoDescricaoTarefa = document.querySelector(".app__section-active-task-description");
 
 const btnRemoverConcluidas = document.querySelector("#btn-remover-concluidas");
+const btnRemoverTodas = document.querySelector("#btn-remover-todas");
+
 
 let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
 let tarefaSelecionada = null;
@@ -129,11 +131,18 @@ document.addEventListener("FocoFinalizado", () => {
 })
 
 // botão com ações de remoção das tarefas concluidas.
-btnRemoverConcluidas.onclick = () => {
-    const seletor = ".app__section-task-list-item-complete"
+const removerTarefas = (somenteCompletas) => {
+    // const seletor = somenteCompletas ? ".app__section-task-list-item-complete" :  ".app__section-task-list-item";
+    let seletor = ".app__section-task-list-item-complete";
+    if(somenteCompletas) {
+        seletor = ".app__section-task-list-item-complete"
+    }
     document.querySelectorAll(seletor).forEach(elemento => {
         elemento.remove()
     });
-    tarefas = tarefas.filter(tarefa => !tarefa.completa);
+    tarefas = somenteCompletas ? tarefas.filter(tarefa => !tarefa.completa) : [];
     atualizarTarefas();
 }
+
+btnRemoverConcluidas.onclick = removerTarefas(true);
+btnRemoverTodas.onclick = () => removerTarefas(false);
