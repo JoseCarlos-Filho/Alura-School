@@ -90,6 +90,13 @@
       "url": "https://www.youtube.com/embed/v01-cdttEyU",
       "imagem": "https://purr.objects-us-east-1.dream.io/i/OoNx6.jpg",
       "id": 13
+    },
+    {
+      "id": "33b5",
+      "titulo": "Conhecendo Nest.JS",
+      "descricao": "4 mil visualizações",
+      "url": "https://www.youtube.com/embed/YHpG6t91oW8",
+      "imagem": "https://kinsta.com/wp-content/uploads/2022/06/nest-js-logo.png"
     }
   ]
 }
