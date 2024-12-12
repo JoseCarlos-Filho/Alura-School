@@ -8,15 +8,15 @@ async function buscarVideos(e) {
     const busca = await conectaApi.buscaVideo(dadosDePesquisa); 
     console.log(busca);
     
-    // const lista = document.querySelector("[data-lista]");
+    const lista = document.querySelector("[data-lista]");
 
-    // while (lista.firstChild) {
-    //     lista.removeChild(lista.firstChild);
-    // }
+    while (lista.firstChild) {
+        lista.removeChild(lista.firstChild);
+    }
 
-    // busca.forEach(elemento => lista.appendChild(
-    //     constroiCard(elemento.titulo, elemento.descricao, elemento.url, elemento.imagem)
-    // ));
+    busca.forEach(elemento => lista.appendChild(
+        constroiCard(elemento.titulo, elemento.descricao, elemento.url, elemento.imagem)
+    ));
 }
 
 const btnPesquisar = document.querySelector("[data-botao-pesquisa]");
