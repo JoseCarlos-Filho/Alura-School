@@ -68,9 +68,15 @@ body {
 }
 
 .mensagem__titulo {
-    color: var(--azul-medio);
+    /* color: var(--azul-medio);
     font-weight: bold;
-    font-size: 21px;
+    font-size: 21px; */
+    color: red;
+    font-size: 16px;
+    background-color: #f8d7da;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
 }
 
 .pesquisar__input {
