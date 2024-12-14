@@ -90,6 +90,13 @@
       "descricao": "678 visualizações há 10 dias",
       "url": "https://www.youtube.com/embed/v01-cdttEyU",
       "imagem": "https://purr.objects-us-east-1.dream.io/i/OoNx6.jpg"
+    },
+    {
+      "titulo": "Conhecendo Nest.JS",
+      "descricao": "1 mil visualizações",
+      "url": "https://www.youtube.com/embed/YHpG6t91oW8",
+      "imagem": "https://kinsta.com/wp-content/uploads/2022/06/nest-js-logo.png",
+      "id": 14
     }
   ]
 }
