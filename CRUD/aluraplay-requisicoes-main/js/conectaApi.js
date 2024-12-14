@@ -18,6 +18,10 @@ async function postaVideo(titulo, descricao, url, imagem) {
         })
     });
 
+    if (!conexao.ok) {
+        throw new Error("Não foi possível enviar o video!");
+    }
+
     const conexaoConvertida = await conexao.json();
     return conexaoConvertida;
 
