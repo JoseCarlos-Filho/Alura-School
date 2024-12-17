@@ -7,9 +7,9 @@ function gerarNumeroAleatorio() {
 }
 
 const elementoMenorValor = document.querySelector("#menor-valor");
-menor.innerHTML = `${menorValor}`;
+elementoMenorValor.innerHTML = `${menorValor}`;
 
 const elementoMaiorValor =  document.querySelector("#maior-valor");
-maior.innerHTML = `${maiorValor}`;
+elementoMaiorValor.innerHTML = `${maiorValor}`;
 
 console.log('Numero Secreto', numeroSecreto);
