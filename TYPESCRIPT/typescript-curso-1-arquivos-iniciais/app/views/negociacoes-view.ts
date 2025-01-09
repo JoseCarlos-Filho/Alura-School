@@ -3,7 +3,7 @@ import { View } from "./view.js";
 
 export class NegociacoesView extends View<Negociacoes> {
 
-    template(model: Negociacoes): string {
+    protected template(model: Negociacoes): string {
         // outra forma de formatar a data
         // <td>${negociacao.data.getDate()}/${negociacao.data.getMonth() + 1}/${negociacao.data.getFullYear()}</td>
         return `
@@ -20,7 +20,7 @@ export class NegociacoesView extends View<Negociacoes> {
                 ${model.lista().map(negociacao => {
                     return `
                     <tr>
-                        <td>${new Intl.DateTimeFormat().format(negociacao.data)}</td>
+                        <td>${this.converteData(negociacao.data)}</td>
                         <td>${negociacao.quantidade}</td>
                         <td>${negociacao.valor}</td>
                     </tr>
@@ -32,6 +32,10 @@ export class NegociacoesView extends View<Negociacoes> {
             </tfoot>
         </table>
         `;
+    }
+
+    private converteData(data: Date) {
+        return new Intl.DateTimeFormat().format(data);
     }
     
 }
