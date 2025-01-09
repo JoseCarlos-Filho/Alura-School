@@ -11,12 +11,12 @@ export abstract class View<T> {
     }
     // metodo abstrato onde a responsabilidade de implementar o template é da classe filha.
 
-    abstract template(model: T): string;
+    protected abstract template(model: T): string;
     // {
     //     throw Error('Classe filha precisa implementar o método template');
     // }
 
-    update(model: T): void {
+    public update(model: T): void {
         const template = this.template(model);
         this.elemento.innerHTML = template;
     }
