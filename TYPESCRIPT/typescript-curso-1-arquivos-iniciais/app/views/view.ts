@@ -5,9 +5,13 @@ export abstract class View<T> {
     // protegido para que as classes filhas possam acessar o elemento
     // somente as classes filhas podem acessar o elemento
     protected elemento: HTMLElement;
+    private escapar = false;
 
-    constructor(seletor: string) {
+    constructor(seletor: string, escapar?: boolean) {
         this.elemento = document.querySelector(seletor);
+        if (escapar) {
+            this.escapar = escapar;
+        }
     }
     // metodo abstrato onde a responsabilidade de implementar o template é da classe filha.
 
@@ -17,7 +21,10 @@ export abstract class View<T> {
     // }
 
     public update(model: T): void {
-        const template = this.template(model);
+        let template = this.template(model);
+        if (this.escapar) {
+            template = template.replace(/<script>[\s\S]*?<\/script>/, '');
+        }
         this.elemento.innerHTML = template;
     }
 }
