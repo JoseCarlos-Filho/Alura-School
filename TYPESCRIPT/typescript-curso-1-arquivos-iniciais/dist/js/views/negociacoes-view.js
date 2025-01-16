@@ -1,8 +1,6 @@
 import { View } from "./view.js";
 export class NegociacoesView extends View {
     template(model) {
-        // outra forma de formatar a data
-        // <td>${negociacao.data.getDate()}/${negociacao.data.getMonth() + 1}/${negociacao.data.getFullYear()}</td>
         return `
         <table class="table table-hover table-bordered">
             <thead>
