@@ -1,4 +1,4 @@
-import { Negociacao } from "./negociacao";
+import { Negociacao } from "./negociacao.js";
 
 export class Negociacoes {
     // essa declatação de tipo: Array<Negociacao> é o mesmo que Negociacao[]
