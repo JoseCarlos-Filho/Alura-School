@@ -4,13 +4,21 @@ import { NegociacoesView } from '../views/negociacoes-view.js';
 import { MensagemView } from '../views/mensagem-view.js';
 import { DiaDaSemana } from '../enums/dias-da-semana.js';
 import { logarTempoDeExecucao } from '../decorators/logar-tempo-de-execucao.js';
+import { inspect } from '../decorators/inspect.js';
+import { domInjector } from '../decorators/dom-Injector.js';
 
 export class NegociacaoController {
+    @domInjector('#data')
     private inputData: HTMLInputElement;
+
+    @domInjector('#quantidade')
     private inputQuantidade: HTMLInputElement;
+
+    @domInjector('#valor')
     private inputValor: HTMLInputElement;
+
     private negociacoes = new Negociacoes();
-    private negociacoesView = new NegociacoesView('#negociacoesView', true);
+    private negociacoesView = new NegociacoesView('#negociacoesView');
     private mensagemView = new MensagemView('#mensagemView');
 
     constructor() {
@@ -18,12 +26,12 @@ export class NegociacaoController {
         // this.inputData = document.querySelector("#data") as HTMLInputElement;
         // Ao utilizar a propriedade strictNullChecks do TypeScript
         // é necessário verificar se o elemento foi encontrado no DOM antes de fazer o casting 
-        this.inputData = <HTMLInputElement>document.querySelector("#data");
-        this.inputQuantidade = document.querySelector("#quantidade") as HTMLInputElement;
-        this.inputValor = document.querySelector("#valor") as HTMLInputElement;
+        // this.inputData = <HTMLInputElement>document.querySelector("#data");
+        // this.inputQuantidade = document.querySelector("#quantidade") as HTMLInputElement;
+        // this.inputValor = document.querySelector("#valor") as HTMLInputElement;
         this.negociacoesView.update(this.negociacoes);
     }
-
+    @inspect()
     @logarTempoDeExecucao()
     public adiciona(): void {
         // const negociacao = this.criaNegociacao();
