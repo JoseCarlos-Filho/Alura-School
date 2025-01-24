@@ -5,7 +5,7 @@ import { MensagemView } from '../views/mensagem-view.js';
 import { DiaDaSemana } from '../enums/dias-da-semana.js';
 import { logarTempoDeExecucao } from '../decorators/logar-tempo-de-execucao.js';
 import { inspect } from '../decorators/inspect.js';
-import { domInjector } from '../decorators/dom-Injector.js';
+import { domInjector } from '../decorators/dom-injector.js';
 
 export class NegociacaoController {
     @domInjector('#data')
@@ -26,17 +26,11 @@ export class NegociacaoController {
         // this.inputData = document.querySelector("#data") as HTMLInputElement;
         // Ao utilizar a propriedade strictNullChecks do TypeScript
         // é necessário verificar se o elemento foi encontrado no DOM antes de fazer o casting 
-        // this.inputData = <HTMLInputElement>document.querySelector("#data");
-        // this.inputQuantidade = document.querySelector("#quantidade") as HTMLInputElement;
-        // this.inputValor = document.querySelector("#valor") as HTMLInputElement;
         this.negociacoesView.update(this.negociacoes);
     }
     @inspect()
     @logarTempoDeExecucao()
     public adiciona(): void {
-        // const negociacao = this.criaNegociacao();
-        // const negociacaoTemp = new Negociacao(null, 0, 0);
-        // const negociacao = negociacaoTemp.criaDe(
         const negociacao = Negociacao.criaDe(
             this.inputData.value,
             this.inputQuantidade.value,
@@ -51,6 +45,26 @@ export class NegociacaoController {
         this.negociacoes.adiciona(negociacao);
         this.atualizaView();
         this.limparFormulario(); 
+    }
+
+    public importarDados(): void {
+        fetch('http://localhost:8080/dados')
+            .then(res => res.json())
+            .then((dados: any[]) => {
+                return dados.map(dadoParcial => {
+                    return new Negociacao(
+                        new Date(), 
+                        dadoParcial.vezes, 
+                        dadoParcial.montante
+                    );
+                })
+            })
+            .then(negociacoesDeHoje => {
+                for (let negociacao of negociacoesDeHoje) {
+                    this.negociacoes.adiciona(negociacao);
+                }
+                this.negociacoesView.update(this.negociacoes);
+            })
     }
 
     // private criaNegociacao(): Negociacao {
