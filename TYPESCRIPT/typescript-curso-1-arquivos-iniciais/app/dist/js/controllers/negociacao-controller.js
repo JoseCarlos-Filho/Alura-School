@@ -11,7 +11,7 @@ import { MensagemView } from '../views/mensagem-view.js';
 import { DiaDaSemana } from '../enums/dias-da-semana.js';
 import { logarTempoDeExecucao } from '../decorators/logar-tempo-de-execucao.js';
 import { inspect } from '../decorators/inspect.js';
-import { domInjector } from '../decorators/dom-Injector.js';
+import { domInjector } from '../decorators/dom-injector.js';
 export class NegociacaoController {
     constructor() {
         this.negociacoes = new Negociacoes();
@@ -29,6 +29,21 @@ export class NegociacaoController {
         this.negociacoes.adiciona(negociacao);
         this.atualizaView();
         this.limparFormulario();
+    }
+    importarDados() {
+        fetch('http://localhost:8080/dados')
+            .then(res => res.json())
+            .then((dados) => {
+            return dados.map(dadoParcial => {
+                return new Negociacao(new Date(), dadoParcial.vezes, dadoParcial.montante);
+            });
+        })
+            .then(negociacoesDeHoje => {
+            for (let negociacao of negociacoesDeHoje) {
+                this.negociacoes.adiciona(negociacao);
+            }
+            this.negociacoesView.update(this.negociacoes);
+        });
     }
     limparFormulario() {
         this.inputData.value = '';
