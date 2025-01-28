@@ -6,6 +6,14 @@ export class Negociacao {
         public readonly valor: number
     ) {}
 
+    public static criaDe(dateString: string, quantidadeString: string, valorString: string): Negociacao {
+        const exp = /-/g;
+        const data = new Date(dateString.replace(exp, ','));
+        const quantidade = parseInt(quantidadeString);
+        const valor = parseFloat(valorString);
+        return new Negociacao(data, quantidade, valor);
+    }
+
     get data(): Date {
         const data = new Date(this._data.getTime());
         return data;
@@ -23,11 +31,14 @@ export class Negociacao {
         return this.quantidade * this.valor;
     }
 
-    public static criaDe(dateString: string, quantidadeString: string, valorString: string): Negociacao {
-        const exp = /-/g;
-        const data = new Date(dateString.replace(exp, ','));
-        const quantidade = parseInt(quantidadeString);
-        const valor = parseFloat(valorString);
-        return new Negociacao(data, quantidade, valor);
+    public paraTexto(): void {
+        console.log(
+            `Data: ${this.data}
+            Quantidade: ${this.quantidade}, 
+            Valor: ${this.valor}, 
+            Volume: ${this.volume}`
+        );
     }
+
+    
 }
