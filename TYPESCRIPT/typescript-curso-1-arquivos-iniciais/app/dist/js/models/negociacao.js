@@ -19,9 +19,11 @@ export class Negociacao {
         return this.quantidade * this.valor;
     }
     paraTexto() {
-        console.log(`Data: ${this.data}
+        return `
+            Data: ${this.data}
             Quantidade: ${this.quantidade}, 
             Valor: ${this.valor}, 
-            Volume: ${this.volume}`);
+            Volume: ${this.volume}
+            `;
     }
 }

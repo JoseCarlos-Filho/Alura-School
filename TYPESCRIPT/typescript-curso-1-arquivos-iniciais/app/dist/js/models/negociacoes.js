@@ -8,6 +8,9 @@ export class Negociacoes {
     lista() {
         return this.negociacoes;
     }
+    paraTexto() {
+        return JSON.stringify(this.negociacoes, null, 2);
+    }
 }
 const negociacoes = new Negociacoes();
 negociacoes.lista().forEach(n => {
