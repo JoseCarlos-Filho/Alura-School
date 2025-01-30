@@ -31,13 +31,13 @@ export class Negociacao {
         return this.quantidade * this.valor;
     }
 
-    public paraTexto(): void {
-        console.log(
-            `Data: ${this.data}
+    public paraTexto(): string {
+        return `
+            Data: ${this.data}
             Quantidade: ${this.quantidade}, 
             Valor: ${this.valor}, 
-            Volume: ${this.volume}`
-        );
+            Volume: ${this.volume}
+            `;
     }
 
     
