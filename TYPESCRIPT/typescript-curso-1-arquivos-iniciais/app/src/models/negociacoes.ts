@@ -1,6 +1,7 @@
+import { Imprimivel } from "../utils/imprimivel.js";
 import { Negociacao } from "./negociacao.js";
 
-export class Negociacoes {
+export class Negociacoes implements Imprimivel {
     // essa declatação de tipo: Array<Negociacao> é o mesmo que Negociacao[]
     private negociacoes: Negociacao[] = [];
 
