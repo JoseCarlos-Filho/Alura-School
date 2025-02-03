@@ -1,7 +1,7 @@
-import { Imprimivel } from "../utils/imprimivel.js";
 import { Negociacao } from "./negociacao.js";
+import { Modelo } from "../interface/modelo.js";
 
-export class Negociacoes implements Imprimivel {
+export class Negociacoes implements Modelo<Negociacoes> {
     // essa declatação de tipo: Array<Negociacao> é o mesmo que Negociacao[]
     private negociacoes: Negociacao[] = [];
 
@@ -17,6 +17,10 @@ export class Negociacoes implements Imprimivel {
 
     public paraTexto(): string {
         return JSON.stringify(this.negociacoes, null, 2);
+    }
+
+    public ehIgual(negociacoes: Negociacoes): boolean {
+        return JSON.stringify(this.negociacoes) === JSON.stringify(negociacoes.lista());
     }
 }
 
