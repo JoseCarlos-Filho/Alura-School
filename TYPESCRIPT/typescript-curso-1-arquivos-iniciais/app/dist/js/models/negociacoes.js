@@ -11,8 +11,12 @@ export class Negociacoes {
     paraTexto() {
         return JSON.stringify(this.negociacoes, null, 2);
     }
+    ehIgual(negociacoes) {
+        return JSON.stringify(this.negociacoes) === JSON.stringify(negociacoes.lista());
+    }
 }
 const negociacoes = new Negociacoes();
 negociacoes.lista().forEach(n => {
     console.log(n);
 });
+//# sourceMappingURL=negociacoes.js.map
