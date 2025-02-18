@@ -9,5 +9,20 @@ if (elementoSaldo !== null) {
 
 if (elementoDataAcesso !== null) {
     const dataAcesso: Date = new Date();
-    elementoDataAcesso.textContent = formatarData(dataAcesso);
+    elementoDataAcesso.textContent = formatarData(dataAcesso, FormatoData.DIA_SEMANA_DIA_MES_ANO);
 }
+
+// if (elementoSaldo !== null && elementoDataAcesso !== null) {
+//     elementoSaldo.textContent = formatarInformacoes(saldo, new Date(), FormatoData.DIA_SEMANA_DIA_MES_ANO);
+// }
+
+// if (elementoSaldo !== null && elementoDataAcesso !== null) {
+//     dataEMoedaFormatada(elementoSaldo, elementoDataAcesso);
+// }
+
+// function dataEMoedaFormatada(elementoSaldo, elementoDataAcesso) {
+//     const dataAcesso = new Date();
+//     elementoDataAcesso.textContent = formatarData(dataAcesso, FormatoData.DIA_SEMANA_DIA_MES_ANO);
+//     elementoSaldo.textContent = formatarMoeda(saldo);
+    
+// }
