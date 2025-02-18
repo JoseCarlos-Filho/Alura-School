@@ -4,6 +4,7 @@
         "outDir": "./dist/js/",
         "rootDir": "./src",
         "noEmitOnError": true,
+        "removeComments": true
     },
     "include": [
         "./src/**/*"
