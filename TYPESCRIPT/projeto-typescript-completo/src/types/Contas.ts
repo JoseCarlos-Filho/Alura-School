@@ -1,6 +1,7 @@
 import { Transacao } from './Transacao.js';
 import { TipoTransacao } from './TipoTransacao.js';
 import { GrupoTransacao } from './GrupoTransacao.js';
+import { ResumoTransacoes } from './ResumoTransacoes.js';
 
 let saldo: number = JSON.parse(localStorage.getItem("saldo")) || 0;
 const transacoes: Transacao[] = localStorage.getItem("transacoes") ? JSON.parse(localStorage.getItem("transacoes"), (key: string, value: string) => {
@@ -60,6 +61,33 @@ const Conta = {
             gruposTransacoes.at(-1).transacoes.push(transacao);
         }
         return gruposTransacoes;
+    },
+
+    getResumoTransacoes(): ResumoTransacoes {
+        const resumoTransacoes: ResumoTransacoes = {
+            totalDepositos: 0,
+            totalTransferencias: 0,
+            totalPagamentosBoleto: 0
+        };
+        for (let transacao of transacoes) {
+            switch (transacao.tipoTransacao) {
+                case TipoTransacao.DEPOSITO:
+                    resumoTransacoes.totalDepositos += transacao.valor;
+                    break;
+                
+                case TipoTransacao.TRANSFERENCIA:
+                    resumoTransacoes.totalTransferencias += transacao.valor;
+                    break;
+
+                case TipoTransacao.PAGAMENTO_BOLETO:
+                    resumoTransacoes.totalPagamentosBoleto += transacao.valor;
+                    break;
+            }
+        };
+        console.log(`Total de depósitos realizados: ${resumoTransacoes.totalDepositos}`);
+        console.log(`Total de transferências realizadas: ${resumoTransacoes.totalTransferencias}`);
+        console.log(`Total de boletos pagos: ${resumoTransacoes.totalPagamentosBoleto}`);
+        return resumoTransacoes;
     },
 
     registrarTransacao(novaTransacao: Transacao): void {
