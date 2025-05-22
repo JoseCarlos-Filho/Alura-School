@@ -49,8 +49,8 @@ btnAdicionar.addEventListener("click", (evento) => {
 
     // hora no formato HH:mm (ex: "08:30")
     const horaCompleta = agora.toLocaleTimeString("pt-BR", {
-        hour: "2-digit",
-        minute: "2-digit",
+        hour: "numeric",
+        minute: "numeric",
         hour12: false,
         timeZone: fusoHorario
     })
