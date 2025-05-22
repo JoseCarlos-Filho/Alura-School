@@ -29,5 +29,37 @@ btnAdicionar.addEventListener("click", (evento) => {
     itemDaLista.appendChild(divItemDaLista);
     listaDeCompras.appendChild(itemDaLista);
 
+    // manipulando data
+    const agora = new Date(); 
+    const fusoHorario = "America/Sao_Paulo";
+
+    // Dia da semana
+    const diaSemana = agora.toLocaleDateString("pt-BR", { 
+        weekday: "long", 
+        timeZone: fusoHorario
+    });
+
+    // formato data DD/MM/YYYY
+    const dataCompleta = agora.toLocaleDateString("pt-BR", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        timeZone: fusoHorario
+    });
+
+    // hora no formato HH:mm (ex: "08:30")
+    const horaCompleta = agora.toLocaleTimeString("pt-BR", {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+        timeZone: fusoHorario
+    })
+
+    const dataHoraFormatada = `${diaSemana} (${dataCompleta}) às ${horaCompleta}`
+
+    const inputDiaDaSemana = document.createElement("p");
+    inputDiaDaSemana.classList.add("texto-data");
+    inputDiaDaSemana.innerText = dataHoraFormatada;
+    itemDaLista.appendChild(inputDiaDaSemana);
 
 })
