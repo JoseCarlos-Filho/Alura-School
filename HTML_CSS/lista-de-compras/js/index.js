@@ -23,6 +23,14 @@ btnAdicionar.addEventListener("click", (evento) => {
     const itemNome = document.createElement("p");
     itemNome.innerText = item;
 
+    itemInputCheckbox.addEventListener("click", () => {
+      if (itemInputCheckbox.checked) {
+        itemNome.style.textDecoration = "line-through";
+      } else {
+        itemNome.style.textDecoration = "none"
+      }  
+    });
+
     divItemDaLista.appendChild(itemInputCheckbox);
     divItemDaLista.appendChild(itemNome);
 
